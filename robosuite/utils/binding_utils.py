@@ -34,7 +34,7 @@ if CUDA_VISIBLE_DEVICES != "":
             MUJOCO_EGL_DEVICE_ID in CUDA_VISIBLE_DEVICES
         ), "MUJOCO_EGL_DEVICE_ID needs to be set to one of the device id specified in CUDA_VISIBLE_DEVICES"
 
-if macros.MUJOCO_GPU_RENDERING and os.environ.get("MUJOCO_GL", None) not in ["osmesa", "glx"]:
+if macros.MUJOCO_GPU_RENDERING and os.environ.get("MUJOCO_GL", None) not in ["osmesa", "glx", "glfw"]:
     # If gpu rendering is specified in macros, then we enforce gpu
     # option for rendering
     if _SYSTEM == "Darwin":
