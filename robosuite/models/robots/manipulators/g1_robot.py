@@ -104,7 +104,11 @@ class G1FixedLowerBody(G1):
         super().__init__(idn=idn)
 
         # fix lower body
-        self._remove_joint_actuation("leg")
+        # self._remove_joint_actuation("leg")
+        # Added for G1 robot xml
+        self._remove_joint_actuation("hip")
+        self._remove_joint_actuation("knee")
+        self._remove_joint_actuation("ankle")
         self._remove_free_joint()
 
     @property
@@ -134,7 +138,11 @@ class G1FloatingBody(G1):
         super().__init__(idn=idn)
 
         # fix lower body
-        self._remove_joint_actuation("leg")
+        # self._remove_joint_actuation("leg")
+        # Added for G1 robot xml
+        self._remove_joint_actuation("hip")
+        self._remove_joint_actuation("knee")
+        self._remove_joint_actuation("ankle")
         self._remove_free_joint()
 
     @property
@@ -172,10 +180,20 @@ class G1ArmsOnly(G1):
         super().__init__(idn=idn)
 
         # fix lower body
-        self._remove_joint_actuation("leg")
+        # self._remove_joint_actuation("leg")
         self._remove_joint_actuation("head")
-        self._remove_joint_actuation("torso")
+        # self._remove_joint_actuation("torso")
+        # Added for G1 robot xml
+        self._remove_joint_actuation("waist")
+        self._remove_joint_actuation("hip")
+        self._remove_joint_actuation("knee")
+        self._remove_joint_actuation("ankle")
         self._remove_free_joint()
+        # 14 joints left:
+        # 'left_shoulder_pitch_joint', 'left_shoulder_roll_joint', 'left_shoulder_yaw_joint', 'left_elbow_joint', 
+        # 'left_wrist_roll_joint', 'left_wrist_pitch_joint', 'left_wrist_yaw_joint', 
+        # 'right_shoulder_pitch_joint', 'right_shoulder_roll_joint', 'right_shoulder_yaw_joint', 'right_elbow_joint', 
+        # 'right_wrist_roll_joint', 'right_wrist_pitch_joint', 'right_wrist_yaw_joint'
 
     @property
     def init_qpos(self):

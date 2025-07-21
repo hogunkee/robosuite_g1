@@ -97,13 +97,21 @@ class ManipulatorModel(RobotModel):
         for joint in self.all_joints:
             if "torso" in joint:
                 self.torso_joints.append(joint)
+            elif "waist" in joint:
+                self.torso_joints.append(joint)                
             elif "mobile" in joint:
                 self.base_joints.append(joint)
             elif "head" in joint:
                 self.head_joints.append(joint)
             elif "leg" in joint:
                 self.legs_joints.append(joint)
-
+            elif "hip" in joint:
+                self.legs_joints.append(joint)
+            elif "knee" in joint:
+                self.legs_joints.append(joint)
+            elif "ankle" in joint:
+                self.legs_joints.append(joint)
+            
         for joint in self.all_joints:
             if (
                 joint not in self._base_joints
@@ -118,11 +126,19 @@ class ManipulatorModel(RobotModel):
         for actuator in self.all_actuators:
             if "torso" in actuator:
                 self.torso_actuators.append(actuator)
+            elif "waist" in actuator:
+                self.torso_actuators.append(actuator)
             elif "mobile" in actuator:
                 self.base_actuators.append(actuator)
             elif "head" in actuator:
                 self.head_actuators.append(actuator)
             elif "leg" in actuator:
+                self.legs_actuators.append(actuator)
+            elif "hip" in actuator:
+                self.legs_actuators.append(actuator)
+            elif "knee" in actuator:
+                self.legs_actuators.append(actuator)
+            elif "ankle" in actuator:
                 self.legs_actuators.append(actuator)
 
         for actuator in self.all_actuators:
