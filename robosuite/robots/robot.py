@@ -64,7 +64,7 @@ class Robot(object):
         lite_physics=True,
     ):
         self.arms = REGISTERED_ROBOTS[robot_type].arms
-
+        
         # TODO: Merge self.part_controller_config and self.composite_controller_config into one
         if composite_controller_config is not None:
             self.composite_controller_config = composite_controller_config

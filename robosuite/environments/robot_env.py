@@ -152,7 +152,7 @@ class RobotEnv(MujocoEnv):
         # First, verify that correct number of robots are being inputted
         self.env_configuration = env_configuration
         self._check_robot_configuration(robots)
-
+        
         # Robot
         robots = list(robots) if type(robots) is list or type(robots) is tuple else [robots]
         self.num_robots = len(robots)
