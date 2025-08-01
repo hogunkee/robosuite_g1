@@ -13,6 +13,8 @@ from robocasa.utils.gym_utils import GrootRoboCasaEnv  # noqa: F401
 # sys.path.append('/home/hogunkee/robocasa-gr1-tabletop-tasks')
 
 env_id = 'gr1_unified/PnPCupToDrawerClose_GR1ArmsAndWaistFourierHands_Env'
+env_id = 'gr1_unified/PnPCupToDrawerClose_GR1FullFourierHands_Env'
+env_id = 'robocasa_gr1_full_fourier_hands/PnPCupToDrawerClose_GR1FullFourierHands_Env'
 env = gym.make(env_id, enable_render=True)
 print(env)
 
