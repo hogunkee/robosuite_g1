@@ -30,7 +30,8 @@ class G1(LeggedManipulatorModel):
         Returns:
             dict: Dictionary containing arm-specific gripper names
         """
-        return {"right": "FourierRightHand", "left": "FourierLeftHand"}
+        return {"right": "Dex31RightHand", "left": "Dex31LeftHand"}
+        #return {"right": "FourierRightHand", "left": "FourierLeftHand"}
 
     @property
     def default_controller_config(self):
