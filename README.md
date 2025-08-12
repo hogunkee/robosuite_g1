@@ -8,17 +8,16 @@ This repository adds G1’s robot model and assets into Robosuite’s modular si
 ## Overview
 
 Robosuite-G1 enables:
-- Simulation of Unitree G1 in all Robosuite tasks (single-arm and dual-arm capable)
-- Custom G1-specific tabletop and manipulation environments
-- Easy integration with RL libraries for policy training
+- Simulation of Unitree G1 in Robosuite tasks
+- Add Unitree G1 humanoid robot and Unitree Dex3-1 hand.
 
 ---
 
 ## Key Changes from Original Robosuite
 - Integrated **G1 URDF** and mesh assets into Robosuite’s robot model registry
+- Integrated **Dex3-1 Hands** and mesh assets
 - Implemented G1-specific controllers and joint limit configurations
-- Added G1-adapted tabletop environments (e.g., LiftG1, StackG1)
-- Updated XML scene definitions for G1 proportions
+- Updated XML scene definitions for G1 + Dex3-1 proportions
 
 ---
 
