@@ -26,6 +26,7 @@ Robosuite-G1 enables:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/Robosuite-g1.git
-   cd Robosuite-g1
+   git clone https://github.com/hogunkee/robosuite_g1
+   cd robosuite_g1
+   pip install -e .
 
