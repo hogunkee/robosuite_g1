@@ -61,11 +61,11 @@ class G1(LeggedManipulatorModel):
         Returns:
             np.array: default initial qpos for the right, left arms
         """
-        init_qpos = np.array([0.0] * 32)
+        init_qpos = np.array([0.0] * 29)    # except neck joints
         right_arm_init = np.array([0.0, -0.1, 0.0, -1.57, 0.0, 0.0, 0.0])
-        init_qpos[6:13] = right_arm_init
+        init_qpos[-14:-7] = right_arm_init
         left_arm_init = np.array([0.0, 0.1, 0.0, -1.57, 0.0, 0.0, 0.0])
-        init_qpos[13:20] = left_arm_init
+        init_qpos[-7:] = left_arm_init
         return init_qpos
 
     @property
@@ -124,9 +124,9 @@ class G1FixedLowerBody(G1):
         """
         init_qpos = np.array([0.0] * 20)
         right_arm_init = np.array([0.0, -0.1, 0.0, -1.57, 0.0, 0.0, 0.0])
-        init_qpos[6:13] = right_arm_init
+        init_qpos[-14:-7] = right_arm_init
         left_arm_init = np.array([0.0, 0.1, 0.0, -1.57, 0.0, 0.0, 0.0])
-        init_qpos[13:20] = left_arm_init
+        init_qpos[-7:] = left_arm_init
         return init_qpos
 
     @property
@@ -158,9 +158,9 @@ class G1FloatingBody(G1):
         """
         init_qpos = np.array([0.0] * 20)
         right_arm_init = np.array([0.0, -0.1, 0.0, -1.57, 0.0, 0.0, 0.0])
-        init_qpos[6:13] = right_arm_init
+        init_qpos[-14:-7] = right_arm_init
         left_arm_init = np.array([0.0, 0.1, 0.0, -1.57, 0.0, 0.0, 0.0])
-        init_qpos[13:20] = left_arm_init
+        init_qpos[-7:] = left_arm_init
         return init_qpos
 
     @property

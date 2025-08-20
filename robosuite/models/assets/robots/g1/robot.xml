@@ -74,6 +74,7 @@
         <!-- <freejoint name="pelvis"/> -->
         <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.2 0.2 0.2 1" mesh="pelvis"/>
         <geom type="mesh" contype="0" conaffinity="0" group="1" density="0" rgba="0.7 0.7 0.7 1" mesh="pelvis_contour_link"/>
+        <site name="imu_in_pelvis" size="0.01" pos="0.04525 0 -0.08339"/>
         <!-- <geom type="mesh" rgba="0.7 0.7 0.7 1" mesh="pelvis_contour_link"/> -->
         <body name="left_hip_pitch_link" pos="0 0.064452 -0.1027">
           <inertial pos="0.002741 0.047791 -0.02606" quat="0.954862 0.293964 0.0302556 0.030122" mass="1.35" diaginertia="0.00181517 0.00153422 0.00116212"/>
@@ -388,4 +389,11 @@
     <motor name="left_wrist_pitch_joint" joint="left_wrist_pitch_joint" gear="1" ctrllimited="true" ctrlrange="-200 200"/>
     <motor name="left_wrist_yaw_joint" joint="left_wrist_yaw_joint" gear="1" ctrllimited="true" ctrlrange="-200 200"/>
   </actuator>
+
+  <sensor>
+    <framequat name='orientation' objtype='site' noise='0.001' objname='imu_in_pelvis'/>
+    <framepos name='position' objtype='site' noise='0.001' objname='imu_in_pelvis'/>
+    <gyro name='angular-velocity' cutoff='34.9' noise='0.005' site='imu_in_pelvis'/>
+  </sensor>
+  
 </mujoco>
